@@ -1,0 +1,37 @@
+// ハンバーガーアイコンクリック
+.rotate-top {
+    transform: rotate(-45deg);
+}
+
+.rotate-bottom {
+    transform: rotate(45deg);
+}
+
+// ハンバーガーメニュークリック表示
+.nav-active {
+    transform: translateX(0);
+}
+
+// ハンバーガーメニュー内アコーディオンボタン
+.plus__open {
+    &::before {
+        content: "";
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
+}
+
+// ハンバーガーメニュー内アコーディオン
+.slide__open {
+    display: block;
+}
+
+// mvキャッチコピーfixed停止
+.fixed-none {
+    display: none;
+}
+
+.fixed-fadeIn {
+    opacity: 1;
+}
+

@@ -1,0 +1,717 @@
+.mv {
+    width: 100%;
+
+    &__wrapper {
+        position: relative;
+        display: block;
+        z-index: 0;
+    }
+
+    &__main {
+        // margin-bottom: 10%;
+        display: flex;
+    }
+
+    &__left {
+        width: 50%;
+        height: 100vh;
+        background: url(../images/mv/mv-l1.jpg) center center / cover;
+    }
+
+    &__right {
+        width: 50%;
+        height: 100vh;
+
+        &--top {
+            width: 100%;
+            height: 50vh;
+            background: url(../images/mv/mv-r1.jpg) center center / cover;
+        }
+
+        &--bottom {
+            width: 100%;
+            height: 50vh;
+            background: url(../images/mv/mv-r2.jpg) center center / cover;
+        }
+    }
+
+}
+
+// キャッチコピー
+//fixedかかる方
+.catch__top {
+    position: fixed;
+    padding: 0 3% 0;
+    width: 50%;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    transition: .2s;
+
+    &--svg {
+        width: 100%;
+        height: auto;
+
+        //pc
+        @include screen-pc {
+            max-width: 730px;
+        }
+    }
+}
+
+//キャッチコピーfixedから入れ替わる方
+.catch__bottom {
+    position: absolute;
+    padding: 0 3% 0;
+    width: 50%;
+    top: 7%;
+    left: 5%;
+    // transform: translateY(-50%);
+    transition: .2s;
+    z-index: 5;
+    opacity: 0;
+
+    &--svg {
+        width: 100%;
+        height: auto;
+
+        //pc
+        @include screen-pc {
+            max-width: 730px;
+        }
+    }
+
+    &--color {
+        fill: $blue;
+    }
+}
+
+
+
+.about {
+    position: relative;
+
+    //pc
+    @include screen-pc {
+        display: flex;
+    }
+
+    &__wrapper {
+        @include width;
+        margin-bottom: 100px;
+        padding: 65% 3% 0;
+
+        //tab
+        @include screen-tab {
+            padding: 20% 0 20% 50%;
+        }
+
+        //pc
+        @include screen-pc {
+            display: flex;
+        }
+    }
+
+    &__txtarea {
+        margin-bottom: 30px;
+    }
+
+    &__ttl {
+        margin-bottom: 20px;
+        @include font-ttl;
+        font-size: 1.6em;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-ttl;
+        }
+    }
+
+    &__txt {
+        padding: 5px 0;
+        @include font-txt;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-txt;
+        }
+    }
+
+    // linkボタン
+    &__btn {
+        @include more__align;
+    }
+
+    &__more {
+        display: inline-block;
+        @include more;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-link;
+        }
+
+        &:hover {
+            @include hover;
+        }
+    }
+}
+
+// JOB TRAINING
+.work {
+    &__wrapper {
+        margin-bottom: 250px;
+        padding: 0 4%;
+        width: 100%;
+        position: relative;
+
+        //pc
+        @include screen-pc {
+            padding: 0 5%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 95%;
+            height: 105%;
+            top: 25px;
+            right: 0;
+            z-index: -1;
+            background: $blue;
+        }
+    }
+
+    // section大見出し
+    &__ttl {
+        @include font-sec;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-sec;
+        }
+    }
+
+    // wssについて
+    &__about {
+        @include width;
+        padding: 60px 0;
+        margin-left: auto;
+
+        //tab
+        @include screen-tab {
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            width: $pc-width;
+        }
+    }
+
+    // WSSロゴ
+    &__logo {
+        margin-bottom: 15px;
+        padding-top: 15%;
+        width: 25%;
+        background: url(../images/svg/wss-logo_white.svg) no-repeat center center / contain;
+
+        //pc
+        @include screen-pc {
+            max-width: 290px;
+        }
+    }
+
+    &__txt {
+        @include font-txt;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-txt;
+        }
+    }
+
+    // WEB DESIGN と PRPGRAMMING
+    &__container {
+        @include width;
+
+        //tab
+        @include screen-tab {
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            padding-top: 50px;
+            width: $pc-width;
+        }
+    }
+
+    // WEB DESIGN
+    &__menu01 {
+        margin-bottom: 50px;
+        width: 100%;
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 70px;
+        }
+
+    }
+
+    // PROGRAMMING
+    &__menu02 {
+        width: 100%;
+    }
+}
+
+// WEB DESIGN の中身
+.menu01 {
+    &__ttl {
+        @include font-work;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 30px;
+            font-size: $bf-size-work;
+        }
+    }
+
+    &__pics {
+        padding: 15px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img1 {
+        @include work-img('work-w1.jpg');
+    }
+
+    &__img2 {
+        @include work-img('work-w2.jpg');
+    }
+
+    &__img3 {
+        @include work-img('work-w3.jpg');
+    }
+
+    &__txtarea {
+        margin-bottom: 20px;
+
+        //pc
+        @include screen-pc {
+            width: 65%;
+            margin-left: auto;
+        }
+    }
+
+    &__txt {
+        padding: 5px 0;
+        @include font-txt;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-txt;
+        }
+    }
+
+    // moreボタン
+    &__btn {
+        @include more__align;
+
+    }
+
+    &__more {
+        display: inline-block;
+        @include more($white, $blue, $white);
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-link;
+        }
+
+        &:hover {
+            @include hover($white, $blue);
+        }
+    }
+}
+
+// PROGRAMMING の中身
+.menu02 {
+    &__ttl {
+        @include font-work;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 30px;
+            font-size: $bf-size-work;
+        }
+    }
+
+    &__pics {
+        padding: 15px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img1 {
+        @include work-img('work-p1.jpg');
+    }
+
+    &__img2 {
+        @include work-img('work-p2.jpg');
+    }
+
+    &__img3 {
+        @include work-img('work-p3.jpg');
+    }
+
+    &__txtarea {
+        margin-bottom: 20px;
+
+        //pc
+        @include screen-pc {
+            width: 65%;
+            margin-left: auto;
+        }
+    }
+
+    &__txt {
+        padding: 5px 0;
+        @include font-txt;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-txt;
+        }
+    }
+
+    // moreボタン
+    &__btn {
+        @include more__align;
+    }
+
+    &__more {
+        display: inline-block;
+        @include more($white, $blue, $white);
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-link;
+        }
+
+        &:hover {
+            @include hover($white, $blue);
+        }
+    }
+}
+
+// COMPANY HISTORY
+.history {
+    &__wrapper {
+        margin-bottom: 150px;
+        padding: 0 4%;
+        width: 100%;
+    }
+
+    &__ttl {
+        @include font-sec;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-sec;
+        }
+    }
+
+    &__container {
+
+        //pc
+        @include screen-pc {
+            display: flex;
+            justify-content: space-between;
+            width: $pc-width;
+            margin: 0 auto;
+        }
+    }
+
+    // 年表
+    &__listarea {
+        @include width;
+        padding: 60px 0 40px;
+
+        //tab
+        @include screen-tab {
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            width: 50%;
+        }
+    }
+
+    // 年表リスト
+    &__list {
+        padding: 5px 0;
+
+        //pc
+        @include screen-pc {
+            padding-bottom: 20px;
+            width: 100%;
+        }
+    }
+
+    // 年
+    &__year {
+        font-size: 1.4rem;
+        font-weight: $f-weight-b;
+        letter-spacing: 0.08rem;
+        color: $blue;
+
+        //pc
+        @include screen-pc {
+            padding-bottom: 10px;
+            font-size: 2.5rem;
+        }
+    }
+
+    // 会社概要
+    &__box {
+        @include width;
+
+        //tab
+        @include screen-tab {
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+        }
+    }
+
+
+
+    &__txt {
+        padding: 5px 0;
+        @include font-txt;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-txt;
+        }
+    }
+
+    &__txtarea {
+        margin-bottom: 50px;
+    }
+
+    // moreボタン
+    &__btn {
+        @include more__align;
+    }
+
+    &__more {
+        @include more;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-link;
+        }
+
+        &:hover {
+            @include hover;
+        }
+    }
+}
+
+// ACCESS
+.access {
+    &__wrapper {
+        margin-bottom: 150px;
+        padding: 0 4%;
+        width: 100%;
+    }
+
+    &__ttl {
+        @include font-sec;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-sec;
+        }
+    }
+
+    &__map {
+        padding: 60px 0 40px;
+        width: 100%;
+        margin: 0 auto;
+
+        //pc
+        @include screen-pc {
+            margin: 0;
+        }
+    }
+
+    &__maplink {
+        width: 100%;
+        height: 300px;
+    }
+
+    //pc
+    &__container {
+        @include screen-pc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: $pc-width;
+            margin: 0 auto;
+        }
+    }
+
+    &__map {
+
+        //pc
+        @include screen-pc {
+            // padding: 0;
+            width: 60%;
+            height: 600px;
+        }
+
+        & iframe {
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__infoarea {
+
+        //tab
+        @include screen-tab {
+            display: flex;
+        }
+
+        //pc
+        @include screen-pc {
+            display: block;
+            width: 30%;
+        }
+    }
+
+    &__info {
+        @include width;
+        margin-bottom: 30px;
+
+        //tab
+        @include screen-tab {
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            margin-bottom: 50px;
+        }
+
+    }
+
+    &__list {
+        padding: 5px 0;
+        font-size: 1.4rem;
+        font-weight: $f-weight-b;
+        letter-spacing: 0.08rem;
+        color: $blue;
+
+        &--txt {
+            padding: 5px 0;
+            @include font-txt;
+
+            //pc
+            @include screen-pc {
+                font-size: $bf-size-txt;
+            }
+        }
+    }
+
+    // TELLと問い合わせbtn
+    &__btns {
+        @include width;
+
+        //tab
+        @include screen-tab {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: $tab-width;
+        }
+
+        //pc
+        @include screen-pc {
+            display: block;
+            // flex-direction: column;
+            // width: $tab-width;
+        }
+    }
+
+    &__link {
+        padding: 10px 0;
+
+        &:nth-of-type(1) {
+            margin-bottom: 30px;
+
+            //pc
+            @include screen-pc {
+                margin-bottom: 40px;
+            }
+        }
+
+        &--tell {
+            @include more();
+            padding: 15px 50px;
+
+            //pc
+            @include screen-pc {
+                font-size: $bf-size-link;
+            }
+
+            &:hover {
+                @include hover();
+            }
+        }
+
+        &--mail {
+            @include more();
+            padding: 15px 50px;
+
+            //pc
+            @include screen-pc {
+                font-size: $bf-size-link;
+            }
+
+            &:hover {
+                @include hover();
+            }
+        }
+    }
+
+}

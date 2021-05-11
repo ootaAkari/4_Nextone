@@ -1,0 +1,226 @@
+.wrapper {
+    width: 100%;
+    
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 10;
+    //pc
+    @include screen-pc {
+        padding: 30px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        //pc
+        @include screen-pc {
+            // display: block;
+            position: static;
+            margin: 0 auto;
+            width: 95%;
+            height: 50px;
+        }
+    }
+
+    &__logo--img {
+        //pc
+        @include screen-pc {
+            width: 250px;
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+}
+
+// ハンバーガーメニュー
+.gnav {
+    min-width: 250px;
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: .5s;
+
+    //pc
+    @include screen-pc {
+        position: static;
+        width: 70%;
+        max-width: 830px;
+        height: 50px;
+        background: none;
+        transform: translateX(0);
+    }
+
+    &__nav {
+        min-width: 165px;
+        width: 55%;
+        margin: 0 auto;
+
+        //pc
+        @include screen-pc {
+            display: flex;
+            align-items: start;
+            justify-content: space-around;
+            width: 100%;
+        }
+    }
+
+    // JOBTRAINING とicon 横並び
+    &__list {
+        padding-bottom: 20px;
+        //pc
+        @include screen-pc {
+            padding: 0;
+        }
+
+        &:nth-of-type(2) {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            //pc
+            @include screen-pc {
+                width: 20%;
+                min-width: 165px;
+            }
+            & .gnav__link {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        @include font-nav;
+        color: $black;
+        transition: .5s;
+        @include screen-pc {
+            font-size: $bf-size-nav;
+        }
+
+        &:hover {
+            @include nav-hover;
+        }
+    }
+}
+
+// ハンバーガーアイコン
+.btn {
+    // span2本上下左右真ん中寄せ
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+
+    //pc
+    @include screen-pc {
+        display: none;
+    }
+
+    &__top {
+        @include btn(-8px);
+    }
+
+    &__bottom {
+        @include btn(8px);
+    }
+}
+
+// gnav内のopen部分
+.open {
+    &__list {
+        width: 80%;
+        position: relative;
+        min-width: 140px;
+    }
+
+    // JOB TRAINING 横のopenicon
+    &__icon {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+        // openicon 縦線
+        &::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: $black;
+            transform: translateX(-50%);
+            transition: .5s;
+        }
+
+        // openicon 横線
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            background: $black;
+            transform: translateY(-50%);
+            transition: .5s;
+
+        }
+
+        &:hover {
+            &::before {
+                @include nav-hover;
+            }
+
+            &::after {
+                @include nav-hover;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        margin-left: 5%;
+        text-decoration: none;
+        @include font-nav-sub;
+        color: $black;
+        transition: .5s;
+
+        &:nth-of-type(1) {
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            @include nav-hover;
+        }
+    }
+
+    &__txtarea {
+        margin-bottom: 20px;
+        display: none;
+    }
+}

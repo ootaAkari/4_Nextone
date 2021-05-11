@@ -1,0 +1,40 @@
+
+// カラー
+$black: #161616;
+$blue: #2568A9;
+$white: #fff;
+
+// フォント
+$f-Ja: "Sawarabi Gothic";
+$f-En: 'Open Sans'; 
+
+
+//1024px未満 (mini)
+$mf-size-sec: 4rem;
+$mf-size-work: 1.8rem;
+$mf-size-ttl: 1.4rem;
+$mf-size-nav: 1.3rem;
+$mf-size-txt: 1.2rem;
+$mf-size-link: 1.4rem;
+
+// 1024px以上 (big)
+$bf-size-sec: 7rem;
+$bf-size-work: 4rem;
+$bf-size-ttl: 2.5rem;
+$bf-size-nav: 1.6rem;
+$bf-size-txt: 1.6rem;
+$bf-size-link: 1.6rem;
+
+// Boldとregular
+$f-weight-b: 700;
+$f-weight-r: 400;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $f-En,  $f-Ja, sans-serif;
+    color: $black;
+}
+

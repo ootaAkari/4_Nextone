@@ -1,0 +1,144 @@
+.footer {
+    padding: 30px 0 30px;
+    width: 100%;
+    background: $blue;
+
+    &__wrapper {
+        @include width;
+    }
+
+    &__logoarea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 220px;
+        height: 50px;
+        margin: 0 auto;
+        background: $white;
+
+        //pc
+        @include screen-pc {
+            width: 310px;
+            height: 80px;
+        }
+
+    }
+
+    &__logo {
+        width: 180px;
+        height: 20px;
+        background: url(../images/svg/nextone-logo_color.svg) center center / cover;
+        background-color: #fff;
+
+        //pc
+        @include screen-pc {
+            width: 270px;
+            height: 30px;
+        }
+    }
+
+    // ナビゲーション
+    &__nav {
+        padding: 40px 20px 20px;
+        width: 70%;
+        max-height: 250px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        //tab 
+        @include screen-tab {
+            padding-bottom: 40px;
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        //pc
+        @include screen-pc {
+            max-width: 870px;
+        }
+    }
+
+    &__list {
+        width: 50%;
+
+        &:nth-child(2) .footer__link {
+            min-width: 140px;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        //tab
+        @include screen-tab {
+            text-align: center;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        @include font-nav;
+        line-height: 4;
+        text-decoration: none;
+        color: $white;
+        transition: .5s;
+
+        //pc
+        @include screen-pc {
+            font-size: $bf-size-nav;
+        }
+
+        &:hover {
+            @include nav-hover;
+        }
+    }
+
+    // gnav内のopen部分
+    &__open {
+
+        &--link {
+            display: block;
+            text-decoration: none;
+            @include font-nav-sub;
+            color: $white;
+            transition: .5s;
+
+            //pc 
+            @include screen-pc {
+                font-size: $bf-size-txt;
+            }
+
+            &:nth-of-type(1) {
+                margin-bottom: 20px;
+            }
+
+            &:hover {
+                @include nav-hover;
+            }
+        }
+
+        &--txtarea {
+            margin-bottom: 20px;
+        }
+
+
+    }
+
+    &__copy {
+        // padding: 10px 0 0;
+        text-align: center;
+        @include font-txt;
+        color: $white;
+
+        //pc
+        @include screen-pc {
+            font-size: $mf-size-link;
+        }
+    }
+
+
+}

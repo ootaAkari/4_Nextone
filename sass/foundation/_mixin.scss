@@ -1,0 +1,122 @@
+
+// メディアクエリ
+
+//タブレット
+@mixin screen-tab {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+//PC
+@mixin screen-pc {
+    @media screen and (min-width: 1024px){
+        @content;
+    }
+}
+
+
+
+// フォント
+
+// セクションごと大見出し
+@mixin font-sec {
+    font-size: $mf-size-sec;
+    font-weight: $f-weight-b;
+    letter-spacing: 0.04rem;
+    
+}
+// セクションwork内見出し
+@mixin font-work {
+    font-size: $mf-size-work;
+    font-weight: $f-weight-b;
+    letter-spacing: 0.05rem;
+}
+// セクションaboutのタイトル
+@mixin font-ttl {
+    font-size: $mf-size-ttl;
+    font-weight: $f-weight-b;
+    letter-spacing: 0.08rem;
+}
+// ナビゲーション
+@mixin font-nav {
+    font-size: $mf-size-nav;
+    font-weight: $f-weight-b;
+    letter-spacing: 0.04rem;
+    line-height: 5;
+}
+// ナビゲーションopen小文字
+@mixin font-nav-sub {
+    font-size: $mf-size-txt;
+    font-weight: $f-weight-r;
+    letter-spacing: 0.04rem;
+}
+// 本文
+@mixin font-txt {
+    font-size: $mf-size-txt;
+    font-weight: $f-weight-r;
+    letter-spacing: 0.08rem;
+    line-height: 1.6;
+}
+
+
+//↓ UIアイテム
+
+// ハンバーガーボタン
+@mixin btn($translate: 0) {
+    width: 100%;
+    height: 3px;
+    background: $black;
+    position: absolute;
+    transition: .5s;
+    transform: translateY($translate);
+}
+
+// moreリンク
+@mixin more__align {
+    text-align: right;
+}
+
+@mixin more($color: $blue, $back: $white, $border: $blue) {
+    padding: 20px 70px;
+    border-radius: 40px;
+    border: 1px solid $border;
+    background: $back;
+    font-size: $mf-size-link;
+    font-weight: $f-weight-b;
+    letter-spacing: 0.04rem;
+    text-decoration: none;
+    color: $color;
+    transition: .5s;
+}
+
+@mixin hover($back: $blue, $color: $white) {
+    background: $back;
+    color: $color;
+}
+
+//ナビゲーションリンク
+@mixin nav-hover {
+    opacity: .6;
+}
+
+// スマホコンテンツ幅
+@mixin width($width: 90%) {
+    width: $width;
+    margin: 0 auto;
+}
+
+//タブレット版コンテンツ幅
+$tab-width: 85%;
+
+//PC版コンテンツ幅
+$pc-width: 80%;
+
+// work WEB DESIGN と PROGRAMMING の画像大きさ
+@mixin work-img($jpg: 'work-w1.jpg'){
+    padding-top: 30%;
+    width: (100%/3);
+    background: url(../images/work/#{$jpg}) center center / cover;
+}
+
+
